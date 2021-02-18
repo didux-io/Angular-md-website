@@ -18,10 +18,6 @@ export class LoginComponent {
   }
 
   login(): void {
-    if (this.username == 'admin' && this.password == 'admin') {
-      this.router.navigate(["user"]);
-    } else {
-      alert("Invalid credentials");
-    }
+    this.username == 'admin' && this.password == 'admin' ? alert("Valid credentials") : alert("Invalid credentials");
   }
 }
