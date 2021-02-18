@@ -7,8 +7,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  username: string | undefined;
-  password: string | undefined;
+  username!: string;
+  password!: string;
 
   constructor(private router: Router) {
   }
@@ -17,7 +17,7 @@ export class LoginComponent {
     this.router.navigate([route]);
   }
 
-  login(): void {
+  login() {
     this.username == 'admin' && this.password == 'admin' ? alert("Valid credentials") : alert("Invalid credentials");
   }
 }
