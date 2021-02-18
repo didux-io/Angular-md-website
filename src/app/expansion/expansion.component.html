@@ -1,0 +1,83 @@
+<mat-toolbar color="primary" class="example-header">
+  <mat-toolbar-row>
+    <button mat-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <ng-template matMenuContent>
+        <button mat-menu-item (click)="navigate('login')">Login</button>
+        <button mat-menu-item (click)="navigate('about')">About</button>
+        <button mat-menu-item (click)="navigate('contact')">Contact</button>
+        <button mat-menu-item (click)="navigate('snackbar')">Snackbar</button>
+        <button mat-menu-item (click)="navigate('expansion')">Expansion</button>
+        <button mat-menu-item (click)="navigate('spinner')">Spinner</button>
+        <button mat-menu-item (click)="navigate('sidenav')">Sidenav</button>
+        <button mat-menu-item (click)="navigate('table')">Tables</button>
+      </ng-template>
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-card class="expansionCard">
+  <div class="accordionAllButtons">
+    <button mat-button (click)="accordion.openAll()">Expand All</button>
+    <button mat-button (click)="accordion.closeAll()">Collapse All</button>
+  </div>
+  <mat-accordion class="accordionHeaders" multi>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Personal data
+        </mat-panel-title>
+        <mat-panel-description>
+          Type your name and age
+          <mat-icon>account_circle</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-form-field>
+        <mat-label>First name</mat-label>
+        <input matInput>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Age</mat-label>
+        <input matInput type="number" min="1">
+      </mat-form-field>
+
+    </mat-expansion-panel>
+    <mat-expansion-panel enabled>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Destination
+        </mat-panel-title>
+        <mat-panel-description>
+          Type the country name
+          <mat-icon>map</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-form-field>
+        <mat-label>Country</mat-label>
+        <input matInput>
+      </mat-form-field>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Day of the trip
+        </mat-panel-title>
+        <mat-panel-description>
+          Inform the date you wish to travel
+          <mat-icon>date_range</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-form-field>
+        <mat-label>Date</mat-label>
+        <input matInput [matDatepicker]="picker" (focus)="picker.open()" readonly>
+      </mat-form-field>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-expansion-panel>
+  </mat-accordion>
+</mat-card>

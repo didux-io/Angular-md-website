@@ -1,0 +1,18 @@
+<mat-toolbar color="warn" class="example-header">
+    <mat-drawer-container  class="example-container" hasBackdrop="true">
+        <mat-sidenav #sidenav mode="over" fixedInViewport="true" fixedTopGap="0" fixedBottomGap="0">
+            <div class="links">
+            <a mat-button (click)="navigate('login')">Login</a><br>
+            <a mat-button (click)="navigate('about')">About</a><br>
+            <a mat-button (click)="navigate('contact')">Contact</a><br>
+            <a mat-button (click)="navigate('snackbar')">Snackbar</a><br>
+            <a mat-button (click)="navigate('expansion')">Expansion</a><br>
+            <a mat-button (click)="navigate('spinner')">Spinner</a><br>
+            <a mat-button (click)="navigate('sidenav')">Sidenav</a><br>
+            <a mat-button (click)="navigate('table')">Tables</a>
+            </div>
+        </mat-sidenav>
+    </mat-drawer-container>
+<button mat-raised-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+</mat-toolbar>
+

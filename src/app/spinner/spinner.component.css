@@ -1,0 +1,24 @@
+  .spacer2 {
+    flex: 1 1 auto;
+  }
+  .messageCard {
+    width: 400px;
+    margin: 10% auto;
+  }
+
+  .buttonRow {
+    display: table-cell;
+    width: 440px;
+  }
+  
+  .buttonRow .mat-button-base {
+    margin: 8px 2px 0;
+  }
+
+  .example-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  
