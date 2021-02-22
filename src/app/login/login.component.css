@@ -6,6 +6,7 @@
     flex: 1 1 auto;
   }
   .example-card {
+    background-color: lightgray;
     width: 400px;
     margin: 10% auto;
   }
