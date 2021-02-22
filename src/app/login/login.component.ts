@@ -18,6 +18,6 @@ export class LoginComponent {
   }
 
   login() {
-    this.username == 'admin' && this.password == 'admin' ? alert("Valid credentials") : alert("Invalid credentials");
+    this.username == 'test' && this.password == 'test' ? alert("Valid credentials") : alert("Invalid credentials");
   }
 }
