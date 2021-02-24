@@ -45,33 +45,33 @@ export class TableComponent implements AfterViewInit {
 
   @ViewChild(MatSort) sort!: MatSort;
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.dataSourceSort.sort = this.sort;
   }
 
-  getTotalCost() {
+  getTotalCost(): number {
     return this.transactions.map(t => t.cost).reduce((acc, value) => acc + value, 0);
   }
 
-  drop(event: CdkDragDrop<string[]>) {
+  drop(event: CdkDragDrop<string[]>): void {
     moveItemInArray(this.columns, event.previousIndex, event.currentIndex);
   }
 
   constructor(private router: Router) { }
 
 
-  navigate(route: string) {
+  navigate(route: string): void {
     this.router.navigate([route]);
   }
 
-  shuffle() {
+  shuffle(): void {
     let currentIndex = this.columns.length;
     while (0 !== currentIndex) {
-      let randomIndex = Math.floor(Math.random() * currentIndex);
+      const randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex -= 1;
 
       // Swap
-      let temp = this.columns[currentIndex];
+      const temp = this.columns[currentIndex];
       this.columns[currentIndex] = this.columns[randomIndex];
       this.columns[randomIndex] = temp;
     }

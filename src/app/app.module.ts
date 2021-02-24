@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppComponent } from './app.component';
-import { CustomMaterialModule } from "./material.module";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { CustomMaterialModule } from './material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserComponent } from './user/user.component';
-import { AppRoutingModule } from "./core/app.routing.module";
+import { AppRoutingModule } from './core/app.routing.module';
 import { LoginComponent } from './login/login.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';

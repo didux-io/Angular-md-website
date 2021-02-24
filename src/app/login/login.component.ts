@@ -9,7 +9,7 @@ export class LoginComponent {
   username!: string;
   password!: string;
 
-  login() {
-    this.username == 'test' && this.password == 'test' ? alert("Valid credentials") : alert("Invalid credentials");
+  login(): void {
+    this.username === 'test' && this.password === 'test' ? alert('Valid credentials') : alert('Invalid credentials');
   }
 }

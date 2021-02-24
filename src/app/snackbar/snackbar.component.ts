@@ -13,7 +13,7 @@ export class SnackbarComponent {
   constructor(private snackBar: MatSnackBar) {
   }
 
-  message() {
+  message(): void {
     this.snackBar.open('Message', 'End Message', {
       duration: 500,
       horizontalPosition: this.horizontalPosition,
