@@ -6,18 +6,18 @@
     <form class="example-form">
       <table class="example-full-width">
         <caption>This is a table inside a form used to login.</caption>
-        <th id="Login">Login</th>
+        <th id="Login">{{ 'LOGIN.login' | translate }}</th>
         <tr>
           <td>
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Username" [(ngModel)]="username" name="username" required>
+              <input matInput placeholder="{{ 'LOGIN.username' | translate }}" [(ngModel)]="username" name="username" required>
             </mat-form-field>
           </td>
         </tr>
         <tr>
           <td>
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Password" [(ngModel)]="password" type="password" name="password" required>
+              <input matInput placeholder="{{ 'LOGIN.password' | translate }}" [(ngModel)]="password" type="password" name="password" required>
             </mat-form-field>
           </td>
         </tr>
@@ -25,6 +25,6 @@
     </form>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button (click)="login()" color="warn">Login</button>
+    <button mat-raised-button (click)="login()" color="warn">{{ 'LOGIN.login' | translate }}</button>
   </mat-card-actions>
 </mat-card>
