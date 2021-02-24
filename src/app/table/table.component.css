@@ -60,3 +60,8 @@ table, mat-table {
     left: 0;
     right: 0;
   }
+
+  caption {
+    display: none;
+  }
+  

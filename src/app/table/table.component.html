@@ -1,31 +1,12 @@
-<mat-toolbar color="primary" class="example-header">
-  <mat-toolbar-row>
-    <button mat-button [matMenuTriggerFor]="menu">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
-      <ng-template matMenuContent>
-        <button mat-menu-item (click)="navigate('login')">Login</button>
-        <button mat-menu-item (click)="navigate('about')">About</button>
-        <button mat-menu-item (click)="navigate('contact')">Contact</button>
-        <button mat-menu-item (click)="navigate('snackbar')">Snackbar</button>
-        <button mat-menu-item (click)="navigate('expansion')">Expansion</button>
-        <button mat-menu-item (click)="navigate('spinner')">Spinner</button>
-        <button mat-menu-item (click)="navigate('sidenav')">Sidenav</button>
-        <button mat-menu-item (click)="navigate('table')">Tables</button>
-      </ng-template>
-    </mat-menu>
-  </mat-toolbar-row>
-</mat-toolbar>
-
 <mat-tab-group dynamicHeight animationDuration="0ms">
   <mat-tab label="Table 1">
     <ng-template matTabContent>
       <!-- 1st Table -->
       <!-- Can expand rows -->
       <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8">
+        <caption>This is an example table of the periodic table of elements.</caption>
         <ng-container matColumnDef="{{column}}" *ngFor="let column of columns">
-          <th mat-header-cell *matHeaderCellDef> {{column}} </th>
+          <th mat-header-cell *matHeaderCellDef scope="col"> {{column}} </th>
           <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
         </ng-container>
         <ng-container matColumnDef="expandedDetail">
@@ -59,6 +40,7 @@
       <!-- 2nd Table-->
       <!-- Basic <mat-table> (uses display flex)-->
       <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <caption>This is an example table of the periodic table of elements.</caption>
         <ng-container matColumnDef="position">
           <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
           <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
@@ -89,14 +71,15 @@
       <!-- 3rd Table-->
       <!-- Has a basic footer -->
       <table mat-table [dataSource]="transactions" class="mat-elevation-z8">
+        <caption>This is an example table of the periodic table of elements.</caption>
         <ng-container matColumnDef="item">
-          <th mat-header-cell *matHeaderCellDef> Item </th>
+          <th mat-header-cell *matHeaderCellDef scope="col"> Item </th>
           <td mat-cell *matCellDef="let transaction"> {{transaction.item}} </td>
           <td mat-footer-cell *matFooterCellDef> Total </td>
         </ng-container>
 
         <ng-container matColumnDef="cost">
-          <th mat-header-cell *matHeaderCellDef> Cost </th>
+          <th mat-header-cell *matHeaderCellDef scope="col"> Cost </th>
           <td mat-cell *matCellDef="let transaction"> {{transaction.cost | currency}} </td>
           <td mat-footer-cell *matFooterCellDef> {{getTotalCost() | currency}} </td>
         </ng-container>
@@ -113,24 +96,25 @@
       <!-- Has reorderable columns -->
       <table mat-table [dataSource]="dataSource" cdkDropList cdkDropListOrientation="horizontal"
         (cdkDropListDropped)="drop($event)">
+        <caption>This is an example table of the periodic table of elements.</caption>
 
         <ng-container matColumnDef="position">
-          <th mat-header-cell cdkDrag *matHeaderCellDef class="MoveableColumnHeader"> No. </th>
+          <th mat-header-cell cdkDrag *matHeaderCellDef class="MoveableColumnHeader" scope="col"> No. </th>
           <td mat-cell *matCellDef="let element"> {{element.position}} </td>
         </ng-container>
 
         <ng-container matColumnDef="name">
-          <th mat-header-cell cdkDrag *matHeaderCellDef class="MoveableColumnHeader"> Name </th>
+          <th mat-header-cell cdkDrag *matHeaderCellDef class="MoveableColumnHeader" scope="col"> Name </th>
           <td mat-cell *matCellDef="let element"> {{element.name}} </td>
         </ng-container>
 
         <ng-container matColumnDef="weight">
-          <th mat-header-cell cdkDrag *matHeaderCellDef class="MoveableColumnHeader"> Weight </th>
+          <th mat-header-cell cdkDrag *matHeaderCellDef class="MoveableColumnHeader" scope="col"> Weight </th>
           <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
         </ng-container>
 
         <ng-container matColumnDef="symbol">
-          <th mat-header-cell cdkDrag *matHeaderCellDef class="MoveableColumnHeader"> Symbol </th>
+          <th mat-header-cell cdkDrag *matHeaderCellDef class="MoveableColumnHeader" scope="col"> Symbol </th>
           <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
         </ng-container>
 
@@ -143,8 +127,9 @@
     <ng-template matTabContent>
       <button mat-raised-button (click)="shuffle()" color="warn"> Shuffle </button>
       <table mat-table [dataSource]="data" class="mat-elevation-z8">
+        <caption>This is an example table of the periodic table of elements.</caption>
         <ng-container [matColumnDef]="column" *ngFor="let column of columns">
-          <th mat-header-cell *matHeaderCellDef> {{column}} </th>
+          <th mat-header-cell *matHeaderCellDef scope="col"> {{column}} </th>
           <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
         </ng-container>
         <tr mat-header-row *matHeaderRowDef="columns"></tr>
@@ -155,38 +140,39 @@
   <mat-tab label="Table 6">
     <ng-template matTabContent>
       <table mat-table [dataSource]="dataContext" class="mat-elevation-z8">
+        <caption>This is an example table of the periodic table of elements.</caption>
         <ng-container matColumnDef="$implicit">
-          <th mat-header-cell *matHeaderCellDef> $implicit </th>
+          <th mat-header-cell *matHeaderCellDef scope="col"> $implicit </th>
           <td mat-cell *matCellDef="let data"> {{data}} </td>
         </ng-container>
 
         <ng-container matColumnDef="index">
           <th mat-header-cell *matHeaderCellDef> index </th>
-          <td mat-cell *matCellDef="let index = index"> {{index}} </td>
+          <td mat-cell *matCellDef="let index = index" scope="col"> {{index}} </td>
         </ng-container>
 
         <ng-container matColumnDef="count">
-          <th mat-header-cell *matHeaderCellDef> count </th>
+          <th mat-header-cell *matHeaderCellDef scope="col"> count </th>
           <td mat-cell *matCellDef="let count = count"> {{count}} </td>
         </ng-container>
 
         <ng-container matColumnDef="first">
-          <th mat-header-cell *matHeaderCellDef> first </th>
+          <th mat-header-cell *matHeaderCellDef scope="col"> first </th>
           <td mat-cell *matCellDef="let first = first"> {{first}} </td>
         </ng-container>
 
         <ng-container matColumnDef="last">
-          <th mat-header-cell *matHeaderCellDef> last </th>
+          <th mat-header-cell *matHeaderCellDef scope="col"> last </th>
           <td mat-cell *matCellDef="let last = last"> {{last}} </td>
         </ng-container>
 
         <ng-container matColumnDef="even">
-          <th mat-header-cell *matHeaderCellDef> even </th>
+          <th mat-header-cell *matHeaderCellDef scope="col"> even </th>
           <td mat-cell *matCellDef="let even = even"> {{even}} </td>
         </ng-container>
 
         <ng-container matColumnDef="odd">
-          <th mat-header-cell *matHeaderCellDef> odd </th>
+          <th mat-header-cell *matHeaderCellDef scope="col"> odd </th>
           <td mat-cell *matCellDef="let odd = odd"> {{odd}} </td>
         </ng-container>
 
@@ -198,27 +184,28 @@
   <mat-tab label="Table 7">
     <ng-template matTabContent>
       <table mat-table [dataSource]="dataSourceSort" matSort class="mat-elevation-z8">
+        <caption>This is an example table of the periodic table of elements.</caption>
 
         <ng-container matColumnDef="position">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> No. </th>
           <td mat-cell *matCellDef="let element"> {{element.position}} </td>
         </ng-container>
 
         <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> Name </th>
           <td mat-cell *matCellDef="let element"> {{element.name}} </td>
         </ng-container>
 
         <ng-container matColumnDef="weight">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Weight </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> Weight </th>
           <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
         </ng-container>
 
         <ng-container matColumnDef="symbol">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Symbol </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> Symbol </th>
           <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
         </ng-container>
-        
+
         <tr mat-header-row *matHeaderRowDef="columns"></tr>
         <tr mat-row *matRowDef="let row; columns: columns;"></tr>
       </table>

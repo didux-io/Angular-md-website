@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,11 +8,11 @@ import { Router } from '@angular/router';
 })
 export class SidenavComponent {
 
-    
-  constructor(private router : Router) {
-      }
 
-      navigate(route: string) {
-        this.router.navigate([route]);
-      }
+  constructor(private router: Router) {
+  }
+
+  navigate(route: string) {
+    this.router.navigate([route]);
+  }
 }
